@@ -1,0 +1,13 @@
+{
+    "name": "Web_Test_Bed_HTML5_JS_CSS_Node",
+    "version": "1.0.0",
+    "main": "path/to/main.css",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

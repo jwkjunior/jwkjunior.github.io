@@ -1,0 +1,15 @@
+{
+    "name": "Web_Test_Bed_HTML5_JS_CSS_Node",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "wkennedy",
+    "contributors": [
+    ],
+    "dependencies": {}
+}

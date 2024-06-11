@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html lang="en">
+     
+    <head>
+       
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>DQD</title>
+            <link rel="stylesheet" href="DQD_HTML5_JS_CSS_Node_Page1.css">
+           
+
+    </head>
+
+<form accept-charset="UTF-8" action="DQD_HTML5_JS_CSS_Node_Page2.html" autocomplete="off" 
+       method="GET" target="_blank" >
+<img src="USAF_Loggo.png" alt="USAF Logo" width="75" height="75">
+
+           
+            
+            
+<h1>Delivery Quantity Distributor (DQD) Initial Input</h1>
+
+<div class="textAreaColumn">
+    <div>
+        <span>Enter the FY for the contract</span>
+	<br />
+        <textarea  title="" maxlength="4" placeholder="YYYY" class="FYandMMPR"  id="contractFY" name="contractFY" style="font-family: arial; font-size: 85%; text-align: right;"></textarea>
+        
+    </div>
+    <div>
+        <span>Enter the monthly maximum production rate</span>
+	<br />        
+<textarea title="" class="FYandMMPR" id="maximumMonthlyProductionRate" name="maximumMonthlyProductionRate" rows="1" cols="10"
+          style="font-family: arial; font-size: 85%; text-align: right;"></textarea>
+<br />
+    </div>
+</div>
+
+<label for="name">Enter the month and calendar year for the first item delivery date</label>
+ <br />
+<textarea title="" class=fdd id="firstDeliveryDate" name="firstDeliveryDate" placeholder="MM/YYYY" cols="11"  rows="1" style="font-family: arial; font-size: 85%; text-align: right;"></textarea>
+ <br /> 
+<label for="name">Enter the number of months over which deliveries will occur</label>
+ <br /> 
+<textarea title="" id="deliveryMonthsTotal" name="intDeliveryMonthsTotal" cols="4" rows="1" style="font-family: arial; font-size: 85%; text-align: right;"></textarea>
+ <br /> 
+<label for="name">Enter total deliveries</label>
+ <br /> 
+<textarea title="" id="totalDeliveries" name="intTotalDeliveries" cols="11" rows="1" style="font-family: arial; font-size: 85%; text-align: right;"></textarea>
+ <br /><div class="form-group" style="border-image: none;">
+
+    <select title="" id="profile" name="profile" class="form-control">
+        <option value="select">Select a distribution profile</option>
+        <option value="flatline">Flat-line distribution</option>
+        <option value="rampup">Ramp-up distribution</option>
+        <option value="rampdown">Ramp-down distribution</option>
+        <option value="bellcurve">Bell curve distribution</option>
+    </select>
+</div>
+ 
+<div class="labelbreak">
+    <br />
+</div> 
+ 
+ 
+<label id="errorMessage"></label>
+ 
+
+<div class="button">
+<p> <button type="submit" id="submit">Submit</button></p>
+    
+</div>
+   
+
+</form>
+ <script src="DQD_HTML5_JS_CSS_Node_Page1.js"> 
+           </script> 
+
+</html>
+
+

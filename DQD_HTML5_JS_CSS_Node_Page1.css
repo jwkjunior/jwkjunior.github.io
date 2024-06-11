@@ -1,0 +1,115 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 6, 2019, 8:06:30 PM
+    Author     : wkennedy
+*/
+img {
+  
+   padding-left: 10px;
+}
+
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: times-new-roman;
+    font-size: 18px;
+}
+form
+{
+	
+	background-color:  #87ceeb;
+	color: black;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	height: 615px;
+        width: 600px;
+
+}
+.textAreaColumn{
+    width: 100%;
+    background-color: #87ceeb;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+.textAreaColumn div{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+
+
+}
+
+.textAreaColumn div span{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 90%	
+}
+
+.textAreaColumn div textarea{
+    display: block;
+    font-family: arial;
+    resize: none;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height:15px;
+    width: 60px;
+    font-size: 90%;
+   
+    
+}
+label {
+    display:block;
+    text-align:center;
+    font-weight: bold;
+    font-size: 90%;
+    
+    
+}
+
+textarea {
+    font-family: arial;
+    display: block;
+    resize: none;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15px;  
+    
+}
+
+.form-group {
+    display: block;
+    text-align: center;
+    width: 100%
+}
+
+div.labelbreak {
+    line-height: 10px;
+ }
+
+div.button {
+    position: absolute;
+    display: block;
+    margin-left: 270px;
+    margin-right: auto;
+    bottom: 110px;
+	
+}
+
+contractFY {
+    background-color: violet;
+}
+
+
+
