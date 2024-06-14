@@ -96,7 +96,7 @@ function saveGETStringToDB(url){
     var con = mysql.createConnection({
       host: "localhost",
       user: "nodejs",
-      password: "Set_This@aqxe99",
+      password: "###########",    //Replace with valid password if save to DB enabled at a later date.
       ssl: false
     });
     /*
