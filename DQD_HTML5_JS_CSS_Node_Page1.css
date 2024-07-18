@@ -99,13 +99,16 @@ div.labelbreak {
  }
 
 div.button {
-    position: absolute;
+    /*position: absolute;*/   /*COMMENT THIS BACK IN IF ISSUES*/
     display: block;
     margin-left: 270px;
     margin-right: auto;
     bottom: 110px;
+    position:relative;  /*REMOVE THIS AND NEXT LINE IF ISSUES*/
+    z-index:-1; 
 	
 }
+
 
 contractFY {
     background-color: violet;
