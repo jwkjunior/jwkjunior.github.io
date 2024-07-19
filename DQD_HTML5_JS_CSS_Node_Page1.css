@@ -102,10 +102,10 @@ div.button {
     /*position: absolute;*/   /*COMMENT THIS BACK IN IF ISSUES*/
     position:relative;  /*REMOVE THIS AND NEXT LINE IF ISSUES*/
     display: block;
-    margin-left: auto;
+    margin-left: 270px;
     margin-right: auto;
     bottom: 110px;  
-    z-index:-1; 	
+   /* z-index:-1; */	
 }
 
 
