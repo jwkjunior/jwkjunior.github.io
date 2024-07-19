@@ -104,7 +104,7 @@ div.button {
     display: block;
     margin-left: 270px;
     margin-right: auto;
-    bottom: 110px;  
+    bottom: auto;  
     /*z-index:-1; */	
 }
 
