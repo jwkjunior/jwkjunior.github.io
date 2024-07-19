@@ -99,8 +99,8 @@ div.labelbreak {
  }
 
 div.button {
-    /*position: absolute;*/   /*COMMENT THIS BACK IN IF ISSUES*/
-    position:relative;  /*REMOVE THIS AND NEXT LINE IF ISSUES*/
+    position: absolute;   /*COMMENT THIS BACK IN IF ISSUES*/
+   /* position:relative;  REMOVE THIS AND NEXT LINE IF ISSUES*/
     display: block;
     margin-left: 270px;
     margin-right: auto;
