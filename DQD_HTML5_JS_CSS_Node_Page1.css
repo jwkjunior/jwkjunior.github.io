@@ -109,7 +109,7 @@ div.button {               /*CHANGES MADE HERE WERE MADE TO ALLOW A MOBILE PLATF
     bottom: 5px;  
     /*z-index:-1; */	
 }
-
+/*
 @media (pointer: coarse), (hover: none) {
       [title] {
         position: relative;
@@ -127,7 +127,7 @@ div.button {               /*CHANGES MADE HERE WERE MADE TO ALLOW A MOBILE PLATF
         padding: 3px;
       }
     }
-
+*/
 contractFY {
     background-color: violet;
 }
