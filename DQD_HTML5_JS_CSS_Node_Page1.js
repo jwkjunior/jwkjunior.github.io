@@ -265,6 +265,7 @@ window.onload=function(){
  */  
     //contractFYField.addEventListener("mouseover", showTooltip);
     //contractFYField.addEventListener("mouseout", hideTooltip);
+    contractFYField.addEventListener("mouseover", showTooltip);
     contractFYField.addEventListener("input", event => {
         //errorPresent = false;
         var iniContractFY = contractFYField.value;
