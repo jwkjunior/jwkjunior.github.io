@@ -1058,6 +1058,17 @@ function createToolTipMessages() {                          //This aggregates me
    displayErrorMessages();
 }
 
+function isMobile() {
+  // Check if the user agent string contains any of these mobile indicators
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  
+  // Regular expressions for common mobile platforms
+  const mobileRegex = /android|iphone|ipad|ipod|windows phone|iemobile|opera mini/i;
+
+  return mobileRegex.test(userAgent);
+}
+
+
 function displayErrorMessages() {
     //This was originally designed to concatenate all error messages and display 
     //them in a text box. Messages are now being displayed as tooltips, so this
@@ -1071,7 +1082,7 @@ function displayErrorMessages() {
     //all that is needed to switch between the two designs). 
     //Note that the tooltips have not been styled - the default is used.
    
-
+    var mobileBrowser = isMobile();
     var text = "";
     for (i = 0; i < numberOfEntryFieldsToValidate; i++) {
    
@@ -1085,8 +1096,11 @@ function displayErrorMessages() {
     if (text !== "") {
         //****************************************
         //Uncomment first line below and comment out second line to switch between tooltip and textbox design
-        //errorMessage.innerHTML = text;
-        errorMessage.innerHTML = "Float pointer over a highlighted cell to view the error message.";
+	if (mobileBrowser) {
+        	errorMessage.innerHTML = text;
+	} else {
+        	errorMessage.innerHTML = "Float pointer over a highlighted cell to view the error message.";
+	}		
         errorMessage.style.background = "violet";
         errorPresent = true;
        
@@ -1099,7 +1113,10 @@ function displayErrorMessages() {
     }
     //****************************************
     //Comment out first line below to switch to textbox design
-    updateTooltips();
+    if (!mobileBrowser) {
+
+    		updateTooltips();
+    }
     enableDisableSubmit();
 }
 
@@ -1427,5 +1444,4 @@ function  enableDisableSubmit() {
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
  */
-
 
