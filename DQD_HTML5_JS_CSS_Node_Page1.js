@@ -443,7 +443,7 @@ window.onload=function(){
         //submitMaximumMonthlyProductionRateErrorStatus = false;              //THIS SHOULD STAY COMMENTED OUT 
         //console.log("We had an event in the MMPR!");                        //THIS SHOULD STAY COMMENTED OUT
         //var inimaximumMonthlyProductionRate =                                    //REPLACED BY PROPOSED SHOWN ABOVE
-                                        maximumMonthlyProductionRateField.value; //REPLACED BY PROPOSED SHOWN ABOVE
+        //                               maximumMonthlyProductionRateField.value; //REPLACED BY PROPOSED SHOWN ABOVE
         //trimmedEntryFields[1] =  inimaximumMonthlyProductionRate.trim();         //REPLACED BY PROPOSED SHOWN ABOVE
         //preProcessEntry(1);                                                      //REPLACED BY PROPOSED SHOWN ABOVE
         
