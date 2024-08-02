@@ -799,7 +799,10 @@ window.onload=function(){
     function getFieldValue(fieldNum){
 
 	var iniValue = arrayOfEntryFields[fieldNum].value;
-        trimmedEntryFields[fieldNum] = iniValue.trim();        
+        console.log("Here's the raw value: " + iniValue);
+        trimmedEntryFields[fieldNum] = iniValue.trim();  
+        console.log("Here's the trimmed value: " + trimmedEntryFields[fieldNum]);
+        console.log("Here's the ID of the field: " + fieldNum);
         preProcessEntry(fieldNum);
 
     }
