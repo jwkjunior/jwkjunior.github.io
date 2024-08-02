@@ -265,12 +265,22 @@ window.onload=function(){
  */  
     //contractFYField.addEventListener("mouseover", showTooltip);
     //contractFYField.addEventListener("mouseout", hideTooltip);
-    contractFYField.addEventListener("mouseover", showTooltip);
-    contractFYField.addEventListener("input", event => {
-        //errorPresent = false;
-        var iniContractFY = contractFYField.value;
-        trimmedEntryFields[0] = iniContractFY.trim();        
-        preProcessEntry(0);
+ 
+
+/*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
+
+    contractFYField.addEventListener("input", getFieldValue(0));  //PROPOSED
+    contractFYField.addEventListener("click", getFieldValue(0));  //PROPOSED
+
+ 
+    
+
+   // CURRENT EVENT LISTENER TO BE REPLACED WITH THAT SHOWN ABOVE $$$$$$$$$$$$$$$$$$$$
+    //contractFYField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        //errorPresent = false;                                     //THIS SHOULD STAY COMMENTED OUT
+        //var iniContractFY = contractFYField.value;                  //REPLACED BY PROPOSED SHOWN ABOVE
+        //trimmedEntryFields[0] = iniContractFY.trim();               //REPLACED BY PROPOSED SHOWN ABOVE
+        //preProcessEntry(0);                                         //REPLACED BY PROPOSED SHOWN ABOVE
         
 //MOST OF REST SHOULD BE DELETED *********************************************************
         //inputLength = iniContractFYEdited.length;
@@ -419,18 +429,23 @@ window.onload=function(){
        displayErrorMessages 
                    (errorMessagesToDisplay, contractFYField); 
     */
-    });
+    //});                  //REPLACED BY PROPOSED SHOWN ABOVE
+
+    /*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
+
+    maximumMonthlyProductionRateField.addEventListener("input", getFieldValue(1));  //PROPOSED
+    maximumMonthlyProductionRateField.addEventListener("click", getFieldValue(1));  //PROPOSED
 
    
-    maximumMonthlyProductionRateField.addEventListener("input", event => {
-        
-        //errorPresent = false;
-        //submitMaximumMonthlyProductionRateErrorStatus = false; 
-        //console.log("We had an event in the MMPR!");
-        var inimaximumMonthlyProductionRate = 
-                                        maximumMonthlyProductionRateField.value;
-        trimmedEntryFields[1] =  inimaximumMonthlyProductionRate.trim();
-        preProcessEntry(1);
+    //maximumMonthlyProductionRateField.addEventListener("input", event => {   //REPLACED BY PROPOSED SHOWN ABOVE
+      
+        //errorPresent = false;                                               //THIS SHOULD STAY COMMENTED OUT
+        //submitMaximumMonthlyProductionRateErrorStatus = false;              //THIS SHOULD STAY COMMENTED OUT 
+        //console.log("We had an event in the MMPR!");                        //THIS SHOULD STAY COMMENTED OUT
+        //var inimaximumMonthlyProductionRate =                                    //REPLACED BY PROPOSED SHOWN ABOVE
+                                        maximumMonthlyProductionRateField.value; //REPLACED BY PROPOSED SHOWN ABOVE
+        //trimmedEntryFields[1] =  inimaximumMonthlyProductionRate.trim();         //REPLACED BY PROPOSED SHOWN ABOVE
+        //preProcessEntry(1);                                                      //REPLACED BY PROPOSED SHOWN ABOVE
         
 //MOST OF REST SHOULD BE DELETED *********************************************************
         //maximumMonthlyProdRate =  
@@ -491,17 +506,25 @@ window.onload=function(){
          displayErrorMessages 
                    (errorMessagesToDisplay, maximumMonthlyProductionRateField);
         */
-    });
+    //});                    //REPLACED BY PROPOSED SHOWN ABOVE
+
+    /*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
+
+    firstDeliveryDateField.addEventListener("input", getFieldValue(2));  //PROPOSED
+    firstDeliveryDateField.addEventListener("click", getFieldValue(2));  //PROPOSED
+
     
-    firstDeliveryDateField.addEventListener("input", event => {
+    
+    //firstDeliveryDateField.addEventListener("input", event => {    //REPLACED BY PROPOSED SHOWN ABOVE 
         
-        errorPresent = false;
-        var iniFirstDeliveryDate = firstDeliveryDateField.value;
-        trimmedEntryFields[2] = iniFirstDeliveryDate.trim();
-        preProcessEntry(2);
-        //var inputLength = iniFirstDeliveryDateEdited.length;
+        //errorPresent = false;                                      //REPLACED BY PROPOSED SHOWN ABOVE
+        //var iniFirstDeliveryDate = firstDeliveryDateField.value;   //REPLACED BY PROPOSED SHOWN ABOVE
+        //trimmedEntryFields[2] = iniFirstDeliveryDate.trim();         //REPLACED BY PROPOSED SHOWN ABOVE
+        //preProcessEntry(2);                                          //REPLACED BY PROPOSED SHOWN ABOVE
+
+        //var inputLength = iniFirstDeliveryDateEdited.length;      //THIS SHOULD STAY COMMENTED OUT
         
-        //clearHighlightedCell(firstDeliveryDateField);
+        //clearHighlightedCell(firstDeliveryDateField);             //THIS AND FOLLOWING EIGHT LINES SHOULD STAY COMMENTED OUT
         //clearHighlightedCell(contractFYField);
         //console.log("We had an event!");
         //clearErrorMessageArray(2);
@@ -536,15 +559,22 @@ window.onload=function(){
                                             firstDeliveryDateField); 
         } 
         */
-    });
+    // });                                  //REPLACED BY PROPOSED SHOWN ABOVE
+
+
+/*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
+
+    deliveryMonthsTotalField.addEventListener("input", getFieldValue(3));  //PROPOSED
+    deliveryMonthsTotalField.addEventListener("click", getFieldValue(3));  //PROPOSED
+
     
-    deliveryMonthsTotalField.addEventListener("input", event => {
-           
-        var iniDeliveryMonthsTotal = deliveryMonthsTotalField.value;                                      
-        trimmedEntryFields[3] =  iniDeliveryMonthsTotal.trim();
-        preProcessEntry(3);
+    //deliveryMonthsTotalField.addEventListener("input", event => {         //REPLACED BY PROPOSED SHOWN ABOVE
+
+        //var iniDeliveryMonthsTotal = deliveryMonthsTotalField.value;     //REPLACED BY PROPOSED SHOWN ABOVE                         
+        //trimmedEntryFields[3] =  iniDeliveryMonthsTotal.trim();          //REPLACED BY PROPOSED SHOWN ABOVE
+        //preProcessEntry(3);                                              //REPLACED BY PROPOSED SHOWN ABOVE
         
-        //errorPresent = false;
+        //errorPresent = false;                                            //THIS AND FOLLOWING ELEVEN LINES SHOULD STAY COMMENTED OUT
         //submitDeliveryMonthsTotalErrorStatus = false;
         
         //var iniDeliveryMonthsTotalEdited = iniDeliveryMonthsTotal.trim();
@@ -645,13 +675,20 @@ window.onload=function(){
         displayErrorMessages 
                     (errorMessagesToDisplay, deliveryMonthsTotalField);
       */     
-    });
+    //});                                         //REPLACED BY PROPOSED SHOWN ABOVE
+
+/*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
+
+    totalDeliveriesField.addEventListener("input", getFieldValue(4));  //PROPOSED
+    totalDeliveriesField.addEventListener("click", getFieldValue(4));  //PROPOSED
+
     
-    totalDeliveriesField.addEventListener("input", event => {
-        
-        var iniTotalDeliveries = totalDeliveriesField.value;                                 
-        trimmedEntryFields[4] =  iniTotalDeliveries.trim();
-        preProcessEntry(4);
+    //totalDeliveriesField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+ 
+        //var iniTotalDeliveries = totalDeliveriesField.value;           //REPLACED BY PROPOSED SHOWN ABOVE                     
+        //trimmedEntryFields[4] =  iniTotalDeliveries.trim();            //REPLACED BY PROPOSED SHOWN ABOVE
+        //preProcessEntry(4);                                            //REPLACED BY PROPOSED SHOWN ABOVE
+
  /*       
 //MOST OF REST SHOULD BE DELETED *********************************************************
         
@@ -717,7 +754,7 @@ window.onload=function(){
            clearHighlightedCell(deliveryMonthsTotalField); 
         displayErrorMessages(errorMessagesToDisplay, totalDeliveriesField);
         */
-    });
+    //});                       //REPLACED BY PROPOSED SHOWN ABOVE
     
     profileField.onchange = function() {
         //var selected = totalDeliveriesField.value;
@@ -759,6 +796,13 @@ window.onload=function(){
         */
     };
 };
+    function getFieldValue(var fieldNum){
+
+	var iniValue = arrayOfEntryFields[fieldNum].value;
+        trimmedEntryFields[fieldNum] = iniValue.trim();        
+        preProcessEntry(fieldNum);
+
+    }
     
     function preProcessEntry(fieldIn) {   //This is used to check if minimum number of characters have been entered before
                                       //validation begins for certain fields (e.g. Fiscal Year does not get validated until
