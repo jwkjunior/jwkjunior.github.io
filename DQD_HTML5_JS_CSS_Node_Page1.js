@@ -796,7 +796,7 @@ window.onload=function(){
         */
     };
 };
-    function getFieldValue(var fieldNum){
+    function getFieldValue(fieldNum){
 
 	var iniValue = arrayOfEntryFields[fieldNum].value;
         trimmedEntryFields[fieldNum] = iniValue.trim();        
