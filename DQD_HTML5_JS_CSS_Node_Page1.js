@@ -273,12 +273,13 @@ window.onload=function(){
     //contractFYField.addEventListener("click", getFieldValue(0));  //PROPOSED
 
     contractFYField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
-        errorPresent = false;                                     //THIS SHOULD STAY COMMENTED OUT
+        //errorPresent = false;                                     //THIS SHOULD STAY COMMENTED OUT
         //var iniContractFY = contractFYField.value;                //REPLACED BY PROPOSED SHOWN ABOVE
-	var iniContractFY = arrayOfEntryFields[0].value;  
-	console.log("Here's the raw value of iniContractFY in the revised func: " + iniContractFY);
-        trimmedEntryFields[0] = iniContractFY.trim();               //REPLACED BY PROPOSED SHOWN ABOVE
-        preProcessEntry(0);                                         //REPLACED BY PROPOSED SHOWN ABOVE
+	//var iniContractFY = arrayOfEntryFields[0].value;  
+	//console.log("Here's the raw value of iniContractFY in the revised func: " + iniContractFY);
+        //trimmedEntryFields[0] = iniContractFY.trim();               //REPLACED BY PROPOSED SHOWN ABOVE
+        //preProcessEntry(0);                                         //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(0);
     }); 
 
    // CURRENT EVENT LISTENER TO BE REPLACED WITH THAT SHOWN ABOVE $$$$$$$$$$$$$$$$$$$$
@@ -806,8 +807,8 @@ window.onload=function(){
 
 	var iniValue = arrayOfEntryFields[fieldNum].value;
 	//var iniValue = arrayOfEntryFields[0].value; 
-	var iniContractFY = contractFYField.value; 
-        console.log("Here's the raw value of iniContractFY: " + iniContractFY);
+	//var iniContractFY = contractFYField.value; 
+        console.log("Here's the raw value of iniContractFY: " + iniValue;
         trimmedEntryFields[fieldNum] = iniValue.trim();  
         console.log("Here's the trimmed value: " + trimmedEntryFields[fieldNum]);
         console.log("Here's the ID of the field: " + fieldNum);
