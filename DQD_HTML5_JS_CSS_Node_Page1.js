@@ -798,7 +798,8 @@ window.onload=function(){
 };
     function getFieldValue(fieldNum){
 
-	var iniValue = arrayOfEntryFields[fieldNum].value;
+	//var iniValue = arrayOfEntryFields[fieldNum].value;
+	var iniValue = arrayOfEntryFields[0].value;    
         console.log("Here's the raw value: " + iniValue);
         trimmedEntryFields[fieldNum] = iniValue.trim();  
         console.log("Here's the trimmed value: " + trimmedEntryFields[fieldNum]);
