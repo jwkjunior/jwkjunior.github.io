@@ -274,7 +274,8 @@ window.onload=function(){
 
     contractFYField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
         errorPresent = false;                                     //THIS SHOULD STAY COMMENTED OUT
-        var iniContractFY = contractFYField.value;                  //REPLACED BY PROPOSED SHOWN ABOVE
+        //var iniContractFY = contractFYField.value;                //REPLACED BY PROPOSED SHOWN ABOVE
+	var iniContractFY = arrayOfEntryFields[0].value;  
 	console.log("Here's the raw value of iniContractFY in the revised func: " + iniContractFY);
         trimmedEntryFields[0] = iniContractFY.trim();               //REPLACED BY PROPOSED SHOWN ABOVE
         preProcessEntry(0);                                         //REPLACED BY PROPOSED SHOWN ABOVE
