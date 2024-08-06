@@ -1166,7 +1166,7 @@ function displayErrorMessages() {
     for (i = 0; i < numberOfEntryFieldsToValidate; i++) {
    
         if (toolTipMessages[i] !== "") {
-            text = text + " " + toolTipMessages[i];
+            text = text + " " + toolTipMessages[i] + "<br>";
             highlightCell(arrayOfEntryFields[i]);
            
         } else clearHighlightedCell(arrayOfEntryFields[i]);
