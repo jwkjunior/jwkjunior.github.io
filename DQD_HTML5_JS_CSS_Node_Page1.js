@@ -808,7 +808,7 @@ window.onload=function(){
 	var iniValue = arrayOfEntryFields[fieldNum].value;
 	//var iniValue = arrayOfEntryFields[0].value; 
 	//var iniContractFY = contractFYField.value; 
-        console.log("Here's the raw value of iniContractFY: " + iniValue;
+        console.log("Here's the raw value of iniContractFY: " + iniValue);
         trimmedEntryFields[fieldNum] = iniValue.trim();  
         console.log("Here's the trimmed value: " + trimmedEntryFields[fieldNum]);
         console.log("Here's the ID of the field: " + fieldNum);
