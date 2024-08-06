@@ -8,6 +8,9 @@ var arrayOfEntryFieldNames = [
         "contractFY", "maximumMonthlyProductionRate", "firstDeliveryDate", 
         "deliveryMonthsTotal", "totalDeliveries", "profile"
     ];
+var arrayOfMessageHeaders = [ "Contract FY:", "Max Monthly Prod Rate:",
+	"First Item Delivery:", "Delivery Period:", "Total Deliveries:",
+        "Distribution Profile:"];
 var errorMessage;                   
 //var errorPresent = new Boolean(false);
 //var submitContractFYErrorStatus = new Boolean(true);
@@ -1166,7 +1169,7 @@ function displayErrorMessages() {
     for (i = 0; i < numberOfEntryFieldsToValidate; i++) {
    
         if (toolTipMessages[i] !== "") {
-            text = text + " " + toolTipMessages[i] + "<br>";
+            text = text + arrayOfMessageHeaders[i] + toolTipMessages[i] + "<br>";
             highlightCell(arrayOfEntryFields[i]);
            
         } else clearHighlightedCell(arrayOfEntryFields[i]);
