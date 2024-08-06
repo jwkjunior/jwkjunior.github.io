@@ -273,12 +273,9 @@ window.onload=function(){
     //contractFYField.addEventListener("click", getFieldValue(0));  //PROPOSED
 
     contractFYField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
-        //errorPresent = false;                                     //THIS SHOULD STAY COMMENTED OUT
-        //var iniContractFY = contractFYField.value;                //REPLACED BY PROPOSED SHOWN ABOVE
-	//var iniContractFY = arrayOfEntryFields[0].value;  
-	//console.log("Here's the raw value of iniContractFY in the revised func: " + iniContractFY);
-        //trimmedEntryFields[0] = iniContractFY.trim();               //REPLACED BY PROPOSED SHOWN ABOVE
-        //preProcessEntry(0);                                         //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(0);
+    }); 
+    contractFYField.addEventListener("click", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
         getFieldValue(0);
     }); 
 
@@ -440,9 +437,15 @@ window.onload=function(){
 
     /*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
 
-    maximumMonthlyProductionRateField.addEventListener("input", getFieldValue(1));  //PROPOSED
-    maximumMonthlyProductionRateField.addEventListener("click", getFieldValue(1));  //PROPOSED
-
+    //maximumMonthlyProductionRateField.addEventListener("input", getFieldValue(1));  //PROPOSED
+    //maximumMonthlyProductionRateField.addEventListener("click", getFieldValue(1));  //PROPOSED
+	
+    maximumMonthlyProductionRateField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(1);
+    }); 
+    maximumMonthlyProductionRateField.addEventListener("click", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(1);
+    }); 
    
     //maximumMonthlyProductionRateField.addEventListener("input", event => {   //REPLACED BY PROPOSED SHOWN ABOVE
       
@@ -517,10 +520,15 @@ window.onload=function(){
 
     /*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
 
-    firstDeliveryDateField.addEventListener("input", getFieldValue(2));  //PROPOSED
-    firstDeliveryDateField.addEventListener("click", getFieldValue(2));  //PROPOSED
+    //firstDeliveryDateField.addEventListener("input", getFieldValue(2));  //PROPOSED
+    //firstDeliveryDateField.addEventListener("click", getFieldValue(2));  //PROPOSED
 
-    
+    firstDeliveryDateField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(2);
+    }); 
+    firstDeliveryDateField.addEventListener("click", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(2);
+    }); 
     
     //firstDeliveryDateField.addEventListener("input", event => {    //REPLACED BY PROPOSED SHOWN ABOVE 
         
@@ -571,8 +579,15 @@ window.onload=function(){
 
 /*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
 
-    deliveryMonthsTotalField.addEventListener("input", getFieldValue(3));  //PROPOSED
-    deliveryMonthsTotalField.addEventListener("click", getFieldValue(3));  //PROPOSED
+    //deliveryMonthsTotalField.addEventListener("input", getFieldValue(3));  //PROPOSED
+    //deliveryMonthsTotalField.addEventListener("click", getFieldValue(3));  //PROPOSED
+
+    deliveryMonthsTotalField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(3);
+    }); 
+    deliveryMonthsTotalField.addEventListener("click", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(3);
+    }); 
 
     
     //deliveryMonthsTotalField.addEventListener("input", event => {         //REPLACED BY PROPOSED SHOWN ABOVE
@@ -686,8 +701,15 @@ window.onload=function(){
 
 /*  PROPOSED BELOW REPLACES EVENT LISTENER MARKED WITH "$$$$$$" */
 
-    totalDeliveriesField.addEventListener("input", getFieldValue(4));  //PROPOSED
-    totalDeliveriesField.addEventListener("click", getFieldValue(4));  //PROPOSED
+    //totalDeliveriesField.addEventListener("input", getFieldValue(4));  //PROPOSED
+    //totalDeliveriesField.addEventListener("click", getFieldValue(4));  //PROPOSED
+
+    totalDeliveriesField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(4);
+    }); 
+    totalDeliveriesField.addEventListener("click", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
+        getFieldValue(4);
+    }); 
 
     
     //totalDeliveriesField.addEventListener("input", event => {          //REPLACED BY PROPOSED SHOWN ABOVE
