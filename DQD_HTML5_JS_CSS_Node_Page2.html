@@ -1,121 +1,122 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>DQD Results</title>
-        <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8; width=device-width, initial-scale=1.0" name="viewport" > -->
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <title>DQD Results</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="DHTMLX_Related_Files/codebase/dhtmlx.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="DHTMLX_Related_Files/codebase/suite.js"></script>
+    <link rel="STYLESHEET" type="text/css" href="DHTMLX_Related_Files/codebase/dhtmlx.css">
+    <link rel="stylesheet" href="DHTMLX_Related_Files/codebase/suite.css">
 
-        <script src="DHTMLX_Related_Files/codebase/dhtmlx.js" type="text/javascript"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src="DHTMLX_Related_Files/codebase/suite.js"></script>
-        <link rel="STYLESHEET" type="text/css" href="DHTMLX_Related_Files/codebase/dhtmlx.css"> 
-        <link rel="stylesheet" href="DHTMLX_Related_Files/codebase/suite.css">
 
-        
-       
-           
-        <style>
-           form {
-                /*width: 100%;      provides the correct work of a full-screen layout*/ 
-                /*height: 100%;     provides the correct work of a full-screen layout*/
-                height: 135px;
-                width: 100%;	
-                overflow: hidden; /*hides the default body's space*/
-                margin-top: 5px; /*hides the body's scrolls*/
-                margin-bottom: 200px;
-                padding-bottom: 200px;
-                background-color: #87ceeb;
-            }
-            #results {
-                width: auto;
-                height: 79px;
-                margin-top: 75px;
-                margin-left: 10px;
-                position: relative;
-                text-align: top;
-               
-            }
-            
-            div.gridbox_dhx_web.gridbox {               
-                line-height: 20px;
-                vertical-align: top;
-            }
-           
-            #image {
-                display:block;
-                position: absolute;
-                padding-top: 0px;
-                padding-left: 2px;
-                margin-top: 2px;
-                
-            }
-            h1 {
-                display:block;
-                padding-top: 0px;
-                text-align:center;
-                font-weight: bold;
-                font-size: 110%;
-                background-color: #87ceeb;
-            }
-            .button {
-                display:inline-block;   
-                align-items: center;
-                float: center;
-                margin-right: 30%;	
-                margin-left: 40%;	
-            }
-            label.errorMessageLabel {
-                font-weight: normal;
-                background-color: blue;
-            }
-            
-            .exitSystem {
-               
-                font-weight: bold;
-                
-                margin-left: 36%;
-            }
 
-        </style>
-            
-    </head>
+
+    <style>
+        form {
+            /*width: 100%;      provides the correct work of a full-screen layout*/
+            /*height: 100%;     provides the correct work of a full-screen layout*/
+            height: 135px;
+            width: 100%;
+            overflow: hidden; /*hides the default body's space*/
+            margin-top: 5px; /*hides the body's scrolls*/
+            margin-bottom: 200px;
+            padding-bottom: 200px;
+            background-color: #87ceeb;
+        }
+
+        #results {
+            width: auto;
+            height: 79px;
+            margin-top: 75px;
+            margin-left: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        div.gridbox_dhx_web.gridbox {
+            line-height: 20px;
+            vertical-align: top;
+        }
+
+        #image {
+            display: block;
+            position: absolute;
+            padding-top: 0px;
+            padding-left: 2px;
+            margin-top: 2px;
+        }
+
+        h1 {
+            display: block;
+            padding-top: 0px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 110%;
+            background-color: #87ceeb;
+        }
+
+        .button {
+            display: inline-block;
+            align-items: center;
+            float: unset;
+            margin-right: 30%;
+            margin-left: 40%;
+        }
+
+        label.errorMessageLabel {
+            font-weight: normal;
+            background-color: blue;
+        }
+
+        .exitSystem {
+            font-weight: bold;
+            margin-left: 36%;
+        }
+    </style>
+
+</head>
+<body>
     <form>
+
         <div id="image">
-        <img src="USAF_Loggo.png" alt="USAF Logo" width="75" height="75">
+            <img src="USAF_Loggo.png" alt="USAF Logo" width="75" height="75">
         </div>
         <h1>Delivery Quantity Distributor (DQD) Result</h1>
 
         <!--<script src="http://localhost:8787/DQD_HTML5_JS_CSS_Node_Page2.js">-->
-        <!--<script src="http://localhost:8080/Web_Test_Bed_HTML5_JS_CSS_Node/DQD_HTML5_JS_CSS_Node_Page2.js">   
+        <!--<script src="http://localhost:8080/Web_Test_Bed_HTML5_JS_CSS_Node/DQD_HTML5_JS_CSS_Node_Page2.js">
         </script> Uncomment this line to return to working version!!!!!-->
-        <script src="DQD_HTML5_JS_CSS_Node_Page2.js"> </script>
-        
-       
+        <script src="DQD_HTML5_JS_CSS_Node_Page2.js"></script>
+
+
         <div id="results"></div>
 
-    <label class="messageLabel" id="message" style="background-color:#4ddbff "></label>&nbsp&nbsp&nbsp
-        
-    <br/>
-    
-    
-    
-    <div class="button">
-     <br/>
-       
-       
-       <input type="button" id="savetodb" onclick="saveToDB()" value="Save to Database">&nbsp&nbsp&nbsp
-       <input type="button" id="editInputs" onclick="reopenPageOne2()" value="Edit Inputs on First Screen">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-       <br/>
-       
-    </div>
-    <div class="exitSystem">
-        <label>Close all open DQD windows or the browser to exit the system</label>&nbsp&nbsp&nbsp
-    </div>
+        <label class="messageLabel" id="message" style="background-color:#4ddbff "></label>&nbsp&nbsp&nbsp
 
-    </form>  
-    </html>
+        <br />
+
+
+
+        <div class="button">
+            <br />
+
+
+            <input type="button" id="savetodb" onclick="saveToDB()" value="Save to Database">&nbsp&nbsp&nbsp
+            <input type="button" id="editInputs" onclick="reopenPageOne2()" value="Edit Inputs on First Screen">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <br />
+
+        </div>
+        <div class="exitSystem">
+            <label>Close all open DQD windows or the browser to exit the system</label>&nbsp&nbsp&nbsp
+        </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

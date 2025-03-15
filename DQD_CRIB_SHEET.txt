@@ -1,0 +1,7 @@
+DQD_CRIB_SHEET
+
+Information is provided here that provides necessary context and background to
+understand how the validation framework functions when it is applied to the DQD
+input screen. The validation framework provides an easily modified means to 
+manage validations of event-driven inputs - in this case a user input screen is used
+as the 

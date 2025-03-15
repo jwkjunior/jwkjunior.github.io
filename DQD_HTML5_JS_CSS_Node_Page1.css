@@ -1,4 +1,4 @@
-/*
+﻿/*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
@@ -8,8 +8,7 @@ and open the template in the editor.
     Author     : wkennedy
 */
 img {
-  
-   padding-left: 10px;
+    padding-left: 10px;
 }
 
 
@@ -19,64 +18,57 @@ h1 {
     font-family: times-new-roman;
     font-size: 18px;
 }
-form
-{
-	
-	background-color:  #87ceeb;
-	color: black;
-	padding-top: 20px;
-	padding-right: 10px;
-	padding-left: 10px;
-	padding-bottom: 20px;
-	height: 615px;
-        width: 600px;
 
+form {
+    background-color: #87ceeb;
+    color: black;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    height: 615px;
+    width: 600px;
 }
-.textAreaColumn{
+
+.textAreaColumn {
     width: 100%;
     background-color: #87ceeb;
     margin-left: 10px;
-    margin-right: 10px;    
+    margin-right: 10px;
 }
 
-.textAreaColumn div{
-    float: left;
-    width: 50%;
-    padding: 10px;
-    box-sizing: border-box;
+    .textAreaColumn div {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 
+        .textAreaColumn div span {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 90%
+        }
 
-}
-
-.textAreaColumn div span{
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    font-size: 90%	
-}
-
-.textAreaColumn div textarea{
-    display: block;
-    font-family: arial;
-    resize: none;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    height:15px;
-    width: 60px;
-    font-size: 90%;
-   
-    
-}
+        .textAreaColumn div textarea {
+            display: block;
+            font-family: arial;
+            resize: none;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            height: 15px;
+            width: 60px;
+            font-size: 90%;
+        }
 
 label {
-    display:block;
-    text-align:center;
+    display: block;
+    text-align: center;
     font-weight: bold;
     font-size: 90%;
-    
-    
 }
 
 textarea {
@@ -86,8 +78,7 @@ textarea {
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    height: 15px;  
-    
+    height: 15px;
 }
 
 .form-group {
@@ -98,39 +89,43 @@ textarea {
 
 div.labelbreak {
     line-height: 10px;
- }
+}
 
-div.button {               /*CHANGES MADE HERE WERE MADE TO ALLOW A MOBILE PLATFORM TO DISPLAY THE SUBMIT BUTTON PROPERLY*/
-    /*position: absolute; */  /*COMMENT THIS BACK IN IF ISSUES*/
-    position:relative;  /* REMOVE THIS AND NEXT LINE IF ISSUES*/
+.errorMessageMobile {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+div.button { /*CHANGES MADE HERE WERE MADE TO ALLOW A MOBILE PLATFORM TO DISPLAY THE SUBMIT BUTTON PROPERLY*/
+    /*position: absolute; */ /*COMMENT THIS BACK IN IF ISSUES*/
+    position: relative; /* REMOVE THIS AND NEXT LINE IF ISSUES*/
     /*display: block;*/
     margin-left: 270px;
     margin-right: auto;
-    bottom: 5px;  
-    /*z-index:-1; */	
+    bottom: 5px;
+    /*z-index:-1; */
 }
-/*
-@media (pointer: coarse), (hover: none) {
-      [title] {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-      }
-      [title]:focus::after {
-        content: attr(title);
-        position: absolute;
-        top: 90%;
-        color: #000;
-        background-color: #fff;
-        border: 1px solid;
-        width: fit-content;
-        padding: 3px;
-      }
-    }
-*/
+
 contractFY {
     background-color: violet;
 }
 
+.button-container {
+    display: flex;
+    position: relative;
+    margin-left: 270px;
+    margin-right: auto;
+    bottom: 5px;
+}
 
 
+.button-content {
+    display: flex;
+    position: relative;
+}
+
+input[type="checkbox"] {
+    accent-color: violet
+}
