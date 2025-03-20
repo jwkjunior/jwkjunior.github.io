@@ -1,7 +1,186 @@
-DQD_CRIB_SHEET
+DESCRIPTION OF DQD
 
-Information is provided here that provides necessary context and background to
-understand how the validation framework functions when it is applied to the DQD
-input screen. The validation framework provides an easily modified means to 
-manage validations of event-driven inputs - in this case a user input screen is used
-as the 
+This document provides an overview of the Delivery Quantity Distributer (DQD) and 
+specific information on technical aspects of this application. DQD is a tool 
+that will distribute a given quantity of contract deliverables over a given time 
+period in accordance with several common factory deliverable profiles (flat line, 
+ramp up, ramp down and a bell curve). For example, if a contract requires delivering 
+120 radios over 12 months, a "flat-line" distribution will display a result showing 
+a 12 month period with 10 radios arriving each month.
+ 
+In the first screen, users enter data needed to perform the required distribution
+(plus some other pertinent contract-related data) and if the data is entered 
+without errors, a "Submit" button is enabled. Clicking this button displays a second 
+screen with the resulting distribution.
+
+The second screen allows a user to make adjustments (if needed) to the system-generated
+distribution (for example, a factory may be closed for two weeks in December, and to 
+make up the difference, the factory may work overtime in November and January and 
+deliver more radios in each of those months). If there are no validation errors
+on the second screen, the distribution can be saved to a database by clicking a button
+(in this demo version of DQD, the ability to save the data to a database is not included
+- an error message will display if the "Save to Database" button is clicked).
+
+The default distributions are calculated by DQD. There is an option to allow a Large 
+Language Model (LLM - commonly referred to as "AI") to do the distribution instead of 
+using the DQD formulas. If this option is selected, the user-entered data is included 
+in a prompt which is sent to an LLM (Meta Llama 3.2 specifically). The LLM returns the 
+result and the second screen displays the LLM distribution. LLMs can deliver inconsistent 
+results, so see the spreadsheet on the DQD homepage that graphs some LLM-generated 
+distributions and compares them to graphs of the DQD-generated results with the same inputs.
+NOTE: THE AI OPTION HAS NOT BEEN ENABLED FOR THIS VERSION OF DQD.
+
+
+THE DQD VALIDATION FRAMEWORK
+
+DQD includes an internally-developed framework for validating user inputs. This framework 
+has been designed to be:
+
+ 1) as language agnostic as possible (C and JavaScript versions exist so far);
+
+ 2) flexible enough to be easily incorporated into other applications;
+
+ 3) easily maintainable so that removing or changing existing validations,
+    adding new validations to existing fields or adding new fields with validations
+    is quick, easy and resistant to the introduction of coding errors; 
+
+ 4) data-driven so that validation invocation, relationships and messages to display
+    are maintained as Boolean entries in simple data structures (arrays); and
+
+ 3) lightweight and fast.
+
+In this usage, it is applied to the first screen where it validates user inputs, displays 
+error messages and prevents the application from advancing until the errors are corrected. 
+It could however, be easily applied to validate automated inputs received on a server from 
+other systems or sensors and perform appropriate actions. 
+
+Information is provided here that provides the necessary context and background to 
+understand how the validation framework functions when it is applied to the DQD input 
+screen. A description of the features is below, followed by some example entries that 
+illustrate these features.
+
+The DQD validation framework:
+
+ • allows a minimum number of characters to be entered before validation begins
+   (e.g. entering "@02" triggers no validation in a field requiring the input of
+   a calendar or fiscal year with four digits, appending a "4" to this input
+   triggers an error and resulting message requiring a valid year entry);
+
+ • permits validations for data integrity on single fields (e.g. entering 
+   "t" instead of "5" in a quantity field triggers a message indicating that 
+   a valid integer must be entered);
+
+ • permits validations on relationships that involve more than one field
+   (e.g. entering "50" for estimated speed in MPH, "3" for estimated time in hours
+   and "200" for total distance in miles to be traveled triggers a message warning 
+   that the distance traveled exceeds the speed multiplied by the travel time);
+
+ • incorporates a feature that displays relevant messages where they apply so that
+   as the user clicks around the screen, messages that can be addressed in that field 
+   move with the user (e.g. using the multiple field validation described above, if the 
+   user enters "200" in the distance field as the last of the three entries, the system
+   will highlight the field and display the message described above, however, if the 
+   user then clicks in the estimated speed field, the message now displays in the 
+   speed field, the same applies if the user doesn't fix the issue and next clicks in 
+   the estimated time field - note that messages don't move to the current field if 
+   that relationship doesn't include that field, i.e. if the user next clicked on the 
+   field requiring the entry of a valid year, the speed multiplied by hours not equaling 
+   distance traveled stays in the last active field of those three) and    
+
+ • easily allows changing how the messages are displayed for a UI (it's easy to
+   change from displaying them in a tooltip to displaying them in a message box:
+   this can be readily seen by opening DQD in a desktop browser and comparing 
+   how messages are displayed there with how they are displayed when DQD is opened in 
+   a mobile browser). 
+
+
+Follow the steps below to better understand the features described above.
+
+1) Open the initial entry screen for DQD from the DQD General Information page. 
+2) Click in the cell labeled "Enter the FY for the contract" in the upper left, and 
+   enter an invalid entry for a year that should be in the YYYY format (e.g. "@024" or 
+   "tyr4"). The cell should be highlighted indicating an invalid entry, but notice that 
+   no validations are run until at least 4 characters are entered. Correct the input to 
+   show a future fiscal year (a fiscal year runs from 1 October in one year to 30 
+   September the following year and is referred to as Fiscal Year or FY XXXX where XXXX 
+   is the calendar year in which the 30 September date falls, i.e. the FY encompassing 
+   1 Oct 2009 - 30 Sep 2010 is labeled FY 2010). 
+3) Click in the cell labeled "Enter the monthly maximum production rate" in the upper 
+   right. This field requires an integer entry so try entering "u". Notice that the 
+   cell is highlighted and an error displays: in this case, the validation is run 
+   immediately, i.e. the minimum number of characters required before the validations 
+   are run is set to 1 for this field. Correct the entry to "10" and this will clear 
+   the error.
+4) Click in the cell labeled "Enter the month and calendar year for the first item 
+   delivery date" in the upper center of the screen and enter a date that is before the 
+   beginning of the FY entered in Step 2 above (e.g. for FY YYYY, enter a month and year 
+   that is earlier than 1 October of YYYY - 1). The cell should be highlighted and an 
+   error should display indicating that the first item delivery cannot occur before the 
+   FY used to fund the contract (i.e. money authorized for expenditure in a given year 
+   cannot be used to purchase items that will be delivered in an earlier year). Clear 
+   the error by entering a date that occurs during or after the FY entered in Step 2.
+5) Click in the cell labeled "Enter the number of months over which deliveries will 
+   occur" in the center of the screen and enter the number "13". The cell should be 
+   highlighted and an error should display indicating that for FYs in the future, 
+   delivery periods must be 12 months or fewer (the US Congress allocates money yearly
+   and does not allow federal employees to obligate the government to pay for services
+   or goods under a contract that runs for more than 12 months, note however that there
+   are exceptions and workarounds for this). Leave this as "13" for now.
+6) Click in the cell labeled "Enter total deliveries" in the lower center of the 
+   screen and enter the number "150". This cell should be highlighted and this error 
+   message should display: "Delivery quantity cannot exceed the Maximum Monthly 
+   Production quantity multiplied by the number of months in the delivery period." This
+   occurs because if the factory can produce at most 10 items per month, a production
+   run of 12 months can only delivery a total of 120 items, yet the entry in this field 
+   indicates that 150 are to be delivered. Leave this entry at "150" for now.
+7) Click in the cell labeled "Enter the FY for the contract" in the upper left. Notice 
+   that the highlight on the cell labeled "Enter the number of months over which 
+   deliveries will occur" has been cleared and the highlight now moves to this cell. 
+   This error can be fixed in two ways: either the delivery period can be made shorter 
+   than 13 months or the fiscal year can be changed to a earlier year (contract periods
+   can be greater than 13 months for current or prior fiscal years because they reflect
+   reality, i.e. a contract designed to run for 12 months can experience delays for 
+   many different reasons, e.g. a hurricane can shut down a factory for several months
+   or a competitor can file a contract protest which results in a stop-work order). 
+   Don't make any changes in this cell.
+8) Now click back in the cell labeled "Enter the number of months over which deliveries 
+   will occur". Notice that the highlights have changed for two different cells: the 
+   last active cell from step 7 is no longer highlighted and the "Enter total deliveries" 
+   cell is no longer highlighted - only the active cell is highlighted. This occurs 
+   because two different validations across five cells share this one common cell and 
+   both messages display on this cell because (in theory) both issues could be fixed by 
+   changing the value in this cell (in this particular example, it will take changes to 
+   entries in two cells to clear both these errors). Don't make any changes to this 
+   entry yet.
+9) Finally, click in the cell labeled "Enter the monthly maximum production rate" and 
+   notice that in this case, the last active cell remains highlighted and this cell has 
+   also been highlighted. In this case, the error message indicating that a future year 
+   contract cannot be more than 13 months cannot be fixed by an entry in this cell so the
+   highlight stays on the cell labeled " Enter the number of months over which deliveries 
+   will occur" however, the error message "Delivery quantity cannot exceed the Maximum 
+   Monthly Production quantity multiplied by the number of months in the delivery period." 
+   can be fixed by an entry in the current cell so the highlight moves to this cell.
+10) Fix the error for this cell by changing the entry from "10" to "100". Next click
+   in the cell labeled "Enter the number of months over which deliveries will occur" and 
+   change the entry from "13" to "12". All errors should now be cleared, however the 
+   "Submit" should not be enabled.
+11) Finally select a distribution profile and the "Submit" button should now be enabled 
+   because all required entries have been made and there are no errors. Click this button
+   to open the second screen and see the resulting contract delivery schedule. 
+
+  
+
+
+
+    
+      
+
+  
+
+
+
+
+
+
+
+
