@@ -129,7 +129,7 @@ function saveGETStringToDB(schedule) {
             var con = mysql.createConnection({
                 host: "localhost",
                 user: "nodejs",
-                password: "Set_This@aqxe99",
+                password: "************",
                 ssl: false
             });
 
